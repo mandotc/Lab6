@@ -51,6 +51,7 @@ Filename
 For example, my assignment would be named MayElab6.cpp
 
 Github Classroom Assignment Link:
-<include>
-  Name your repository as you would name your file
+https://classroom.github.com/g/4rPPxdSB
+Due Date: March 28
+Name your repository as you would name your file
 
