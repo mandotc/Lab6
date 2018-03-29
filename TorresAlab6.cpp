@@ -1,9 +1,15 @@
+//Armando Torres-Cornejo
+//CPSC 121 Lab 6
+//<03/28/2018>
+
 #include "stdafx.h"
 #include <iostream>
 #include <random>
 using namespace std;
-int arr[10];
-void getarrval();
+
+int arr[10];// global array size 
+
+void getarrval();//function prototypes
 void getRandVal();
 void getRandRangedVal();
 void bubbleaccend();
@@ -11,33 +17,32 @@ void bubbledescend();
 void selectaccend();
 void selectdescend();
 void display();
+
 void main()
 {
 	char ans;
 	do
-	{
-		
+	{//user options 
 		cout << "Would you like to " << endl;
 		cout << "a)  input values " << endl;
 		cout << "b)  provide a range for randomly generated values to fill the array" << endl;
 		cout << "c)  use the default range for random values " << endl;
 		cin >> ans;
-		if (ans == 'a')
+		if (ans == 'a')//user input
 		{
 			getarrval();
 		}
-		if (ans == 'b')
+		if (ans == 'b')//ranged input
 		{
 			getRandRangedVal();
 		}
-		if (ans == 'c')
+		if (ans == 'c')//computer generated values
 		{
 			getRandVal();
 		}
-		
-		cout << "Your array values are:" << endl;
+		cout << "Your array values are:" << endl;//displaying values
 		display();
-		cout << "Would you like to sort the array ascending or decending? ('a' or 'd')" << endl;
+		cout << "Would you like to sort the array ascending or decending? ('a' or 'd')" << endl;//user sorting choice
 		cin >> ans;
 		if (ans=='a')
 		{
@@ -82,7 +87,7 @@ void getarrval() //gets values from user
 
 }
 
-void getRandVal()
+void getRandVal()// gets a random values 
 {
 	default_random_engine randomGenerator;
 	uniform_int_distribution<int>randomArr(1, 100);
@@ -107,7 +112,7 @@ void getRandRangedVal()
 	}
 }
 
-void bubbleaccend()
+void bubbleaccend()//sorting functions
 {
 	int hold;
 	for (int i = 0; i < 10; i++)
@@ -148,7 +153,7 @@ void selectaccend()
 	{
 		for (int j = i + 1; j<10; j++)
 		{
-			if (arr[j]<arr[i]) //for descending order use if(a[j]>a[i]) 
+			if (arr[j]<arr[i]) 
 			{
 				t = arr[i];
 				arr[i] = arr[j];
@@ -165,7 +170,7 @@ void selectdescend()
 	{
 		for (int j = i + 1; j<10; j++)
 		{
-			if (arr[j]>arr[i]) //for descending order use if(a[j]>a[i]) 
+			if (arr[j]>arr[i])  
 			{
 				t = arr[i];
 				arr[i] = arr[j];
